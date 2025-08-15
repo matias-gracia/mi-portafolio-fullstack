@@ -1,6 +1,7 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { EMAILJS_CONFIG } from './emailjs-config';
+// Deploy trigger - EmailJS variables fix
 import './App.css';
 
 // Importar imágenes del proyecto de dron
