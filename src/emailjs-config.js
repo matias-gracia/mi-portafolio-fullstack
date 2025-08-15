@@ -32,9 +32,9 @@
 // 5. Reemplaza las siguientes constantes con tus credenciales reales:
 
 export const EMAILJS_CONFIG = {
-  SERVICE_ID: 'service_zf7hy3c', // Reemplazar con tu Service ID
-  TEMPLATE_ID: 'template_0up2c1h', // Reemplazar con tu Template ID (Auto-Reply)
-  PUBLIC_KEY: 'CgKL8Z0sG_FyAaylE' // Reemplazar con tu Public Key
+  SERVICE_ID: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+  TEMPLATE_ID: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+  PUBLIC_KEY: process.env.REACT_APP_EMAILJS_PUBLIC_KEY
 };
 
 // Ejemplo de configuración completa:
