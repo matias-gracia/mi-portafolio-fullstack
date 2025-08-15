@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import emailjs from '@emailjs/browser';
 import { EMAILJS_CONFIG } from './emailjs-config';
 import './App.css';
@@ -63,12 +63,12 @@ function App() {
     setShowModal(true);
   };
 
-  const closeImageModal = () => {
+  const closeImageModal = useCallback(() => {
     setShowModal(false);
     setSelectedImage(null);
     setCurrentImageIndex(0);
     setCurrentProjectImages([]);
-  };
+  }, []);
 
   const handleModalClick = (e) => {
     if (e.target === e.currentTarget) {
@@ -76,23 +76,23 @@ function App() {
     }
   };
 
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     if (currentProjectImages.length > 0) {
       const nextIndex = (currentImageIndex + 1) % currentProjectImages.length;
       const nextImage = currentProjectImages[nextIndex];
       setCurrentImageIndex(nextIndex);
       setSelectedImage({ src: nextImage.src, alt: nextImage.alt });
     }
-  };
+  }, [currentImageIndex, currentProjectImages]);
 
-  const previousImage = () => {
+  const previousImage = useCallback(() => {
     if (currentProjectImages.length > 0) {
       const prevIndex = currentImageIndex === 0 ? currentProjectImages.length - 1 : currentImageIndex - 1;
       const prevImage = currentProjectImages[prevIndex];
       setCurrentImageIndex(prevIndex);
       setSelectedImage({ src: prevImage.src, alt: prevImage.alt });
     }
-  };
+  }, [currentImageIndex, currentProjectImages]);
 
 
 
