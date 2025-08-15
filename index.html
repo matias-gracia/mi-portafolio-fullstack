@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio Fullstack</title>
+  <link href="./dist/output.css" rel="stylesheet" />
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+  <style>
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .loader div {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #3b82f6;
+      border-top: 5px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white">
+
+  <!-- Loader -->
+  <div id="loader" class="loader">
+    <div></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="bg-white dark:bg-gray-800 shadow-md fixed top-0 left-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-blue-600 dark:text-blue-400">Mi Portafolio</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#inicio" class="text-gray-700 dark:text-gray-300 hover:text-blue-600">Inicio</a>
+        <a href="#sobremi" class="text-gray-700 dark:text-gray-300 hover:text-blue-600">Sobre mí</a>
+        <a href="#habilidades" class="text-gray-700 dark:text-gray-300 hover:text-blue-600">Habilidades</a>
+        <a href="#proyectos" class="text-gray-700 dark:text-gray-300 hover:text-blue-600">Proyectos</a>
+        <a href="#contacto" class="text-gray-700 dark:text-gray-300 hover:text-blue-600">Contacto</a>
+        <a href="#agendar" class="text-gray-700 dark:text-gray-300 hover:text-blue-600">Agenda</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button id="toggle-theme" class="text-blue-600 dark:text-yellow-400 text-lg">🌓</button>
+        <button id="menu-btn" class="md:hidden text-blue-600 focus:outline-none">☰</button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+      <a href="#inicio" class="block py-2 text-gray-700 hover:text-blue-600">Inicio</a>
+      <a href="#sobremi" class="block py-2 text-gray-700 hover:text-blue-600">Sobre mí</a>
+      <a href="#habilidades" class="block py-2 text-gray-700 hover:text-blue-600">Habilidades</a>
+      <a href="#proyectos" class="block py-2 text-gray-700 hover:text-blue-600">Proyectos</a>
+      <a href="#contacto" class="block py-2 text-gray-700 hover:text-blue-600">Contacto</a>
+    </div>
+  </header>
+
+  <!-- Inicio -->
+  <section id="inicio" class="pt-24 py-16 bg-gray-50 dark:bg-gray-900 text-center">
+    <img src="./src/img/Perfil.png" alt="Foto de Matías" class="w-32 h-32 mx-auto rounded-full shadow-md mb-6 object-cover">
+    <h2 class="text-3xl font-bold text-blue-600 dark:text-blue-400">¡Hola! Soy Matías</h2>
+    <p class="text-gray-700 dark:text-gray-300 mt-4">Desarrollador Fullstack apasionado por crear soluciones con tecnologías modernas.</p>
+  </section>
+
+  <!-- Sobre mí -->
+  <section id="sobremi" class="py-16 bg-gray-100 dark:bg-gray-800 text-center">
+    <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400">Sobre mí</h2>
+    <div class="max-w-3xl mx-auto mt-6 text-gray-700 dark:text-gray-300 px-4">
+      <p>Soy Matías, un desarrollador Fullstack con pasión por la tecnología y la innovación. 
+         Me encanta construir soluciones que resuelvan problemas reales utilizando herramientas modernas del ecosistema web.</p>
+      <p class="mt-4">Actualmente enfocado en mejorar continuamente mis habilidades tanto en frontend como backend, 
+         y en crear experiencias que combinan rendimiento, accesibilidad y buen diseño.</p>
+    </div>
+  </section>
+
+  <!-- Habilidades -->
+  <section id="habilidades" class="py-16 bg-white dark:bg-gray-900 text-center">
+    <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400">Habilidades</h2>
+    <div class="flex flex-wrap justify-center mt-8 max-w-4xl mx-auto px-4 gap-4">
+      <span class="bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium">HTML5</span>
+      <span class="bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium">CSS3</span>
+      <span class="bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium">JavaScript</span>
+      <span class="bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium">React.js</span>
+      <span class="bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium">Node.js</span>
+      <span class="bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium">TailwindCSS</span>
+      <span class="bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium">MongoDB</span>
+      <span class="bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium">MySQL</span>
+      <span class="bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium">Git & GitHub</span>
+    </div>
+  </section>
+
+  <!-- Proyectos -->
+  <section id="proyectos" class="py-16 bg-white dark:bg-gray-900 text-center">
+    <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-8">Proyectos Destacados</h2>
+    <div class="flex flex-wrap justify-center">
+      <!-- CarStation -->
+      <div class="max-w-sm bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow m-4">
+        <img class="w-full h-48 object-cover" src="./src/img/logo-cs.png" alt="CarStation Logo">
+        <div class="p-5">
+          <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400">CarStation</h3>
+          <p class="text-gray-600 dark:text-gray-300 mt-2 text-sm">
+            Plataforma web de gestión vehicular con registro de autos, pagos Webpay, chat en vivo y control de mantenciones. Construida con WordPress, Node.js, AWS y DynamoDB.
+          </p>
+          <a href="https://carstation.cl" target="_blank" class="inline-block mt-4 text-sm text-blue-500 hover:underline">Visitar sitio</a>
+        </div>
+      </div>
+      <!-- Dimol -->
+      <div class="max-w-sm bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow m-4">
+        <div class="bg-white dark:bg-gray-800 flex items-center justify-center h-48">
+          <img class="max-h-24 object-contain" src="./src/img/logo-dimol.png" alt="Logo Dimol Spa">
+        </div>
+        <!-- Galería con 1 imagen visible y dots -->
+<div class="p-5">
+  <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400">Gestión de Tickets - Dimol Spa</h3>
+  <p class="text-gray-600 dark:text-gray-300 mt-2 text-sm">
+    Sistema de gestión de incidencias similar a Jira, desarrollado para Dimol Spa. Incluye login seguro, roles, panel de administración y seguimiento de tickets. Tech: React, Node.js, MySQL.
+  </p>
+  <span class="inline-block mt-4 text-sm text-gray-500 italic">Acceso interno</span>
+
+  <!-- Imagen actual -->
+  <div class="mt-6">
+    <img id="sliderImage" src="./src/img/dimol1.png" alt="Vista Dimol" onclick="openModal(this.src)"
+         class="rounded-lg shadow cursor-pointer hover:scale-105 transition w-full h-48 object-contain" />
+  </div>
+
+  <!-- Dots -->
+<div class="flex justify-center gap-2 mt-4">
+  <button onclick="changeImage(0)" class="w-3 h-3 bg-blue-400 rounded-full dot"></button>
+  <button onclick="changeImage(1)" class="w-3 h-3 bg-blue-200 rounded-full dot"></button>
+  <button onclick="changeImage(2)" class="w-3 h-3 bg-blue-200 rounded-full dot"></button>
+  <button onclick="changeImage(3)" class="w-3 h-3 bg-blue-200 rounded-full dot"></button>
+</div>
+
+</div>
+
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="py-16 bg-gray-100 dark:bg-gray-800 text-center">
+    <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400">Contáctame</h2>
+    <p class="mt-4 text-gray-700 dark:text-gray-300">Puedes escribirme a 
+      <a href="mailto:matiasgraciadelpino@gmail.com" class="text-blue-500 hover:underline">matiasgraciadelpino@gmail.com</a> o encontrarme en mis redes sociales.</p>
+    <div class="mt-6 flex justify-center gap-6">
+      <a href="https://github.com/matias-gracia" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">GitHub</a>
+      <a href="https://linkedin.com/in/matias-gracia-del-pino-630590235/" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-blue-600">LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- Descargar CV -->
+  <section id="cv" class="py-16 bg-white dark:bg-gray-900 text-center">
+    <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400">¿Te interesa contratarme?</h2>
+    <p class="text-gray-700 dark:text-gray-300 mt-4">Puedes descargar mi currículum actualizado en PDF haciendo clic en el botón.</p>
+    <a href="./src/files/CV_Matias_Gracia.pdf" download class="inline-block mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition-colors">
+      Descargar CV
+    </a>
+  </section>
+
+  <!-- Sección de Agendamiento -->
+  <section id="agendar-zoom" class="py-16 bg-gray-100 dark:bg-gray-800 text-center">
+    <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400">Agenda una reunión por Zoom</h2>
+    <p class="mt-4 text-gray-700 dark:text-gray-300">Elige una fecha y hora para agendar directamente una videollamada vía Zoom.</p>
+    <div class="max-w-3xl mx-auto mt-8">
+      <iframe src="https://calendly.com/matias_gracia/45min" width="100%" height="600" frameborder="0" class="rounded-lg shadow-lg"></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-gray-800 shadow-inner mt-16 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
+    <p>&copy; 2025 Matías Gracia. Todos los derechos reservados.</p>
+    <p class="mt-1">
+      Hecho con ❤️</a>
+    </p>
+  </footer>
+
+  <!-- WhatsApp Flotante -->
+  <a href="https://wa.me/56983400342" target="_blank"
+     class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg text-xl">
+    💬
+  </a>
+
+  <!-- Script -->
+  <script>
+    window.addEventListener('load', () => {
+      document.getElementById('loader').style.display = 'none';
+    });
+  
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('toggle-theme');
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+  
+      toggleBtn.addEventListener('click', () => {
+        const html = document.documentElement;
+        html.classList.toggle('dark');
+        localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+      });
+  
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+  
+      // Slider de imágenes de Dimol
+      const dimolImages = [
+        './src/img/dimol1.png',
+        './src/img/dimol2.png',
+        './src/img/dimol3.png',
+        './src/img/dimol4.png'
+      ];
+  
+      window.changeImage = function(index) {
+        const sliderImage = document.getElementById('sliderImage');
+        sliderImage.src = dimolImages[index];
+  
+        // Actualiza los estilos de los dots
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, i) => {
+          dot.className = i === index
+            ? 'w-3 h-3 bg-blue-400 rounded-full dot'
+            : 'w-3 h-3 bg-blue-200 rounded-full dot';
+        });
+      };
+  
+      // Modal de imagen
+      window.openModal = function(src) {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+        modalImg.src = src;
+        modal.classList.remove('hidden');
+      };
+  
+      window.closeModal = function() {
+        document.getElementById('imageModal').classList.add('hidden');
+      };
+  
+      document.getElementById('imageModal').addEventListener('click', (e) => {
+        if (e.target.id === 'imageModal') {
+          closeModal();
+        }
+      });
+    });
+  </script>
+  <!-- Modal de imagen ampliada -->
+<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">
+  <img id="modalImg" src="" alt="Imagen ampliada" class="max-w-full max-h-[90vh] rounded-lg shadow-lg border-4 border-white" />
+  <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-2xl font-bold">✖</button>
+</div>
+
+</body>
+</html>
+

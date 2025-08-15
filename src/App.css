@@ -36,3 +36,448 @@
     transform: rotate(360deg);
   }
 }
+
+/* Estilos personalizados para el portafolio */
+
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Aplicar animaciones a las secciones */
+section {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Efectos hover para las tarjetas de proyectos */
+.project-card {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Efectos para las imágenes del proyecto de dron */
+.drone-image {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.drone-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación para las barras de habilidades */
+.skill-bar {
+  overflow: hidden;
+}
+
+.skill-bar > div {
+  animation: slideIn 1.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--skill-level);
+  }
+}
+
+/* Efectos para el botón de modo oscuro */
+.dark-mode-toggle {
+  transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  transform: rotate(180deg);
+}
+
+/* Estilos para el scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Efectos para los enlaces de navegación */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #4f46e5;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Estilos para el formulario de contacto */
+.contact-input {
+  transition: all 0.3s ease;
+}
+
+.contact-input:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.15);
+}
+
+/* Efectos para los botones */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+/* Animación para el hero section */
+.hero-title {
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-subtitle {
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.hero-description {
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero-buttons {
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+/* Efectos para las tarjetas de habilidades */
+.skill-card {
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el footer */
+footer {
+  position: relative;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #4f46e5, transparent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Estilos para el modo oscuro */
+.dark .drone-image:hover {
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+
+.dark .project-card:hover {
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.05);
+}
+
+.dark .skill-card:hover {
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.05);
+}
+
+/* Efectos de carga para las imágenes */
+.image-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Estilos para el modal de imágenes */
+.image-modal {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.image-modal img {
+  animation: zoomIn 0.3s ease-out;
+  /* Permitir que las imágenes mantengan su resolución original */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Botones de navegación del modal */
+.modal-nav-button {
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-nav-button:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Botón de cerrar específico */
+.close-button {
+  animation: pulse 1s infinite;
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.8);
+  background: linear-gradient(45deg, #dc2626, #ef4444) !important;
+  font-weight: 900 !important;
+  font-size: 20px !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.close-button:hover {
+  animation: none;
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(220, 38, 38, 1);
+  background: linear-gradient(45deg, #b91c1c, #dc2626) !important;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.8);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+  }
+}
+
+/* Indicadores de navegación */
+.modal-indicator {
+  transition: all 0.3s ease;
+}
+
+.modal-indicator:hover {
+  transform: scale(1.2);
+}
+
+/* Contador de imágenes */
+.image-counter {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 4px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+/* Estilos para los logos de proyectos */
+.project-logo {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+}
+
+.project-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
+}
+
+/* Asegurar que los logos mantengan sus proporciones */
+.project-logo img {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Estilos para el botón de enlace externo */
+.external-link-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.external-link-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.external-link-button:hover::before {
+  left: 100%;
+}
+
+/* Estilos para el botón de descarga del CV */
+.cv-download-button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, #059669, #10b981) !important;
+}
+
+.cv-download-button:hover {
+  background: linear-gradient(45deg, #047857, #059669) !important;
+  transform: scale(1.05);
+}
+
+.cv-download-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s;
+}
+
+.cv-download-button:hover::before {
+  left: 100%;
+}
+
+/* Estilos para los mensajes de estado del formulario */
+.form-status-message {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación para el botón de envío */
+.submit-button-loading {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Estilos para el scroll personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4f46e5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3730a3;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #6366f1;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #4f46e5;
+}

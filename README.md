@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+# 🚀 Portafolio Full Stack - Matías Gracia
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+¡Bienvenido a mi portafolio personal! Soy un desarrollador full stack apasionado por crear soluciones innovadoras y experiencias digitales excepcionales.
 
-## Available Scripts
+## 🎯 Sobre Mí
 
-In the project directory, you can run:
+Soy un desarrollador especializado en tecnologías web modernas y sistemas embebidos. Mi experiencia abarca desde aplicaciones web hasta sistemas de control de drones, siempre buscando la excelencia técnica y la innovación.
 
-### `npm start`
+### 🛠️ Tecnologías Principales
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend:** React, Vue.js, JavaScript, TypeScript, Tailwind CSS
+- **Backend:** Node.js, Python, Django, Express.js, Laravel
+- **Especialidades:** Sistemas Embebidos, IoT, Drones, Arduino, WebRTC, Machine Learning
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚁 Proyectos Destacados
 
-### `npm test`
+### DroneVision Platform
+Plataforma integral de control y monitoreo de drones para aplicaciones comerciales y de seguridad. Incluye:
+- Control remoto en tiempo real
+- Transmisión de video HD con baja latencia
+- Sistema de navegación autónoma
+- Análisis de datos y reportes automáticos
+- Interfaz web responsive
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Tecnologías:** React, Node.js, WebRTC, Python, Arduino, IoT
 
-### `npm run build`
+### Sistema Dimol
+Gestión de Tickets - Dimol Spa
+Sistema de gestión de incidencias similar a Jira, desarrollado para Dimol Spa. Incluye login seguro, roles, panel de administración y seguimiento de tickets.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Tecnologías:** React, Node.js, MySQL, JWT, REST API, Jira-like
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Características:**
+- Sistema de login seguro con roles
+- Panel de administración completo
+- Gestión y seguimiento de tickets
+- Interfaz similar a Jira
+- Control de incidencias en tiempo real
+- Acceso interno para Dimol Spa
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### CarStation
+Plataforma web de gestión vehicular con registro de autos, pagos Webpay, chat en vivo y control de mantenciones. Construida con WordPress, Node.js, AWS y DynamoDB.
 
-### `npm run eject`
+**Tecnologías:** WordPress, Node.js, AWS, DynamoDB, Webpay, Chat Live
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Características:**
+- Registro y gestión de vehículos
+- Integración con Webpay para pagos
+- Chat en vivo para soporte
+- Control de mantenciones programadas
+- Panel de administración vehicular
+- Base de datos en la nube (AWS)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 Instalación y Uso
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerrequisitos
+- Node.js (versión 16 o superior)
+- npm o yarn
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Instalación
 
-## Learn More
+1. Clona el repositorio:
+```bash
+git clone https://github.com/tu-usuario/mi-portafolio-fullstack.git
+cd mi-portafolio-fullstack
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Instala las dependencias:
+```bash
+npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Inicia el servidor de desarrollo:
+```bash
+npm start
+```
 
-### Code Splitting
+4. Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Scripts Disponibles
 
-### Analyzing the Bundle Size
+- `npm start` - Inicia el servidor de desarrollo
+- `npm run build` - Construye la aplicación para producción
+- `npm test` - Ejecuta las pruebas
+- `npm run build:css` - Construye los estilos de Tailwind CSS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🎨 Características del Portafolio
 
-### Making a Progressive Web App
+- **Diseño Responsive:** Se adapta perfectamente a todos los dispositivos
+- **Modo Oscuro:** Toggle para cambiar entre tema claro y oscuro
+- **Navegación Suave:** Scroll automático entre secciones
+- **Animaciones:** Transiciones fluidas y efectos visuales
+- **Optimizado:** Carga rápida y SEO optimizado
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📱 Secciones del Portafolio
 
-### Advanced Configuration
+1. **Hero Section** - Presentación principal
+2. **Sobre Mí** - Información personal y experiencia
+3. **Proyectos** - Portfolio de trabajos realizados
+4. **Habilidades** - Tecnologías y competencias técnicas
+5. **CV** - Descarga del currículum en PDF
+6. **Contacto** - Formulario de contacto y información
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🛠️ Stack Tecnológico
 
-### Deployment
+- **Frontend:** React 19.1.0
+- **Styling:** Tailwind CSS 3.4.17
+- **Build Tool:** Create React App
+- **Deployment:** Optimizado para Vercel, Netlify, etc.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📧 Contacto
 
-### `npm run build` fails to minify
+- **Email:** matiasgraciadelpino@gmail.com
+- **Teléfono:** +56 9 8340 0342
+- **Ubicación:** Santiago, Chile
+- **GitHub:** [tu-usuario](https://github.com/tu-usuario)
+- **LinkedIn:** [tu-usuario](https://linkedin.com/in/tu-usuario)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+---
+
+⭐ Si te gusta este portafolio, ¡no dudes en darle una estrella al repositorio!
