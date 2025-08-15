@@ -1145,7 +1145,7 @@ function App() {
                     </p>
                     <div className="flex space-x-4">
                       <a 
-                        href="https://github.com/tu-usuario" 
+                        href="https://github.com/matias-gracia" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className={`hover:text-indigo-600 transition-colors duration-200 ${
@@ -1155,7 +1155,7 @@ function App() {
                         GitHub
                       </a>
                       <a 
-                        href="https://linkedin.com/in/tu-usuario" 
+                        href="https://www.linkedin.com/in/matias-gracia-del-pino-630590235/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className={`hover:text-indigo-600 transition-colors duration-200 ${
