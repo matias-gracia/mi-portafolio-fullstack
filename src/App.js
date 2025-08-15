@@ -274,7 +274,7 @@ function App() {
             <div className="text-2xl font-bold text-indigo-600">MG</div>
             
             <div className="hidden md:flex space-x-8">
-              {['home', 'about', 'projects', 'skills', 'cv', 'contact'].map((section) => (
+              {['home', 'about', 'projects', 'skills', 'frameworks', 'cv', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -288,6 +288,7 @@ function App() {
                    section === 'about' ? 'Sobre Mí' :
                    section === 'projects' ? 'Proyectos' :
                    section === 'skills' ? 'Habilidades' :
+                   section === 'frameworks' ? 'Frameworks' :
                    section === 'cv' ? 'CV' : 'Contacto'}
                 </button>
               ))}
@@ -735,6 +736,7 @@ function App() {
                 {[
                   { name: 'Node.js', level: 90 },
                   { name: 'Python', level: 85 },
+                  { name: 'PHP', level: 80 },
                   { name: 'Django', level: 80 },
                   { name: 'Express.js', level: 90 },
                   { name: 'Laravel', level: 75 },
@@ -803,6 +805,214 @@ function App() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Frameworks Section */}
+      <section id="frameworks" className="py-16 px-6">
+        <div className="container mx-auto">
+          <h2 className={`text-4xl font-bold text-center mb-16 ${
+            darkMode ? 'text-white' : 'text-gray-900'
+          }`}>
+            Frameworks y Tecnologías
+          </h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Frontend Frameworks */}
+            <div className={`p-6 rounded-xl shadow-lg skill-card ${
+              darkMode ? 'bg-gray-800' : 'bg-white'
+            }`}>
+              <h3 className={`text-2xl font-bold mb-6 text-center ${
+                darkMode ? 'text-white' : 'text-gray-900'
+              }`}>
+                Frontend
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="text-2xl">⚛️</span>
+                  </div>
+                  <p className={`font-medium text-sm ${
+                    darkMode ? 'text-gray-300' : 'text-gray-700'
+                  }`}>
+                    React
+                  </p>
+                  <span className="inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full mt-1">
+                    Frontend
+                  </span>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="text-2xl">🟢</span>
+                  </div>
+                  <p className={`font-medium text-sm ${
+                    darkMode ? 'text-gray-300' : 'text-gray-700'
+                  }`}>
+                    Vue.js
+                  </p>
+                  <span className="inline-block px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full mt-1">
+                    Frontend
+                  </span>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="text-2xl">🎨</span>
+                  </div>
+                  <p className={`font-medium text-sm ${
+                    darkMode ? 'text-gray-300' : 'text-gray-700'
+                  }`}>
+                    Tailwind CSS
+                  </p>
+                  <span className="inline-block px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full mt-1">
+                    CSS
+                  </span>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="text-2xl">📱</span>
+                  </div>
+                  <p className={`font-medium text-sm ${
+                    darkMode ? 'text-gray-300' : 'text-gray-700'
+                  }`}>
+                    Responsive
+                  </p>
+                  <span className="inline-block px-2 py-1 bg-orange-100 text-orange-800 text-xs rounded-full mt-1">
+                    UI/UX
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Backend Frameworks */}
+            <div className={`p-6 rounded-xl shadow-lg skill-card ${
+              darkMode ? 'bg-gray-800' : 'bg-white'
+            }`}>
+              <h3 className={`text-2xl font-bold mb-6 text-center ${
+                darkMode ? 'text-white' : 'text-gray-900'
+              }`}>
+                Backend
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="text-2xl">🟢</span>
+                  </div>
+                  <p className={`font-medium text-sm ${
+                    darkMode ? 'text-gray-300' : 'text-gray-700'
+                  }`}>
+                    Node.js
+                  </p>
+                  <span className="inline-block px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full mt-1">
+                    Backend
+                  </span>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="text-2xl">🐍</span>
+                  </div>
+                  <p className={`font-medium text-sm ${
+                    darkMode ? 'text-gray-300' : 'text-gray-700'
+                  }`}>
+                    Django
+                  </p>
+                  <span className="inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full mt-1">
+                    Backend
+                  </span>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="text-2xl">🐘</span>
+                  </div>
+                  <p className={`font-medium text-sm ${
+                    darkMode ? 'text-gray-300' : 'text-gray-700'
+                  }`}>
+                    Laravel
+                  </p>
+                  <span className="inline-block px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full mt-1">
+                    Backend
+                  </span>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-yellow-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="text-2xl">⚡</span>
+                  </div>
+                  <p className={`font-medium text-sm ${
+                    darkMode ? 'text-gray-300' : 'text-gray-700'
+                  }`}>
+                    Express.js
+                  </p>
+                  <span className="inline-block px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full mt-1">
+                    Backend
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Databases & Cloud */}
+            <div className={`p-6 rounded-xl shadow-lg skill-card ${
+              darkMode ? 'bg-gray-800' : 'bg-white'
+            }`}>
+              <h3 className={`text-2xl font-bold mb-6 text-center ${
+                darkMode ? 'text-white' : 'text-gray-900'
+              }`}>
+                Base de Datos & Cloud
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="text-2xl">🗄️</span>
+                  </div>
+                  <p className={`font-medium text-sm ${
+                    darkMode ? 'text-gray-300' : 'text-gray-700'
+                  }`}>
+                    MySQL
+                  </p>
+                  <span className="inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full mt-1">
+                    Database
+                  </span>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="text-2xl">☁️</span>
+                  </div>
+                  <p className={`font-medium text-sm ${
+                    darkMode ? 'text-gray-300' : 'text-gray-700'
+                  }`}>
+                    AWS
+                  </p>
+                  <span className="inline-block px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full mt-1">
+                    Cloud
+                  </span>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="text-2xl">📊</span>
+                  </div>
+                  <p className={`font-medium text-sm ${
+                    darkMode ? 'text-gray-300' : 'text-gray-700'
+                  }`}>
+                    DynamoDB
+                  </p>
+                  <span className="inline-block px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full mt-1">
+                    NoSQL
+                  </span>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                    <span className="text-2xl">🔧</span>
+                  </div>
+                  <p className={`font-medium text-sm ${
+                    darkMode ? 'text-gray-300' : 'text-gray-700'
+                  }`}>
+                    MongoDB
+                  </p>
+                  <span className="inline-block px-2 py-1 bg-orange-100 text-orange-800 text-xs rounded-full mt-1">
+                    NoSQL
+                  </span>
+                </div>
               </div>
             </div>
           </div>
