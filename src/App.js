@@ -692,12 +692,12 @@ function App() {
               </h3>
               <div className="space-y-4">
                 {[
-                  { name: 'React', level: 90 },
-                  { name: 'Vue.js', level: 85 },
-                  { name: 'JavaScript', level: 95 },
-                  { name: 'TypeScript', level: 80 },
-                  { name: 'Tailwind CSS', level: 90 },
-                  { name: 'HTML/CSS', level: 95 }
+                  { name: 'React', level: 'Intermedio - Avanzado' },
+                  { name: 'Vue.js', level: 'Intermedio - Avanzado' },
+                  { name: 'JavaScript', level: 'Intermedio - Avanzado' },
+                  { name: 'TypeScript', level: 'Intermedio - Avanzado' },
+                  { name: 'Tailwind CSS', level: 'Intermedio - Avanzado' },
+                  { name: 'HTML/CSS', level: 'Intermedio - Avanzado' }
                 ].map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between mb-2">
@@ -706,17 +706,15 @@ function App() {
                       }`}>
                         {skill.name}
                       </span>
-                      <span className={`text-sm ${
-                        darkMode ? 'text-gray-400' : 'text-gray-500'
+                      <span className={`text-sm px-2 py-1 rounded-full ${
+                        skill.level === 'Intermedio - Avanzado' 
+                          ? 'bg-blue-100 text-blue-800' 
+                          : skill.level === 'Intermedio'
+                          ? 'bg-yellow-100 text-yellow-800'
+                          : 'bg-gray-100 text-gray-800'
                       }`}>
-                        {skill.level}%
+                        {skill.level}
                       </span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div 
-                        className="bg-indigo-600 h-2 rounded-full transition-all duration-300"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
                     </div>
                   </div>
                 ))}
@@ -734,13 +732,13 @@ function App() {
               </h3>
               <div className="space-y-4">
                 {[
-                  { name: 'Node.js', level: 90 },
-                  { name: 'Python', level: 85 },
-                  { name: 'PHP', level: 80 },
-                  { name: 'Django', level: 80 },
-                  { name: 'Express.js', level: 90 },
-                  { name: 'Laravel', level: 75 },
-                  { name: 'REST APIs', level: 95 }
+                  { name: 'Node.js', level: 'Intermedio - Avanzado' },
+                  { name: 'Python', level: 'Intermedio - Avanzado' },
+                  { name: 'PHP', level: 'Intermedio - Avanzado' },
+                  { name: 'Django', level: 'Intermedio - Avanzado' },
+                  { name: 'Express.js', level: 'Intermedio - Avanzado' },
+                  { name: 'Laravel', level: 'Intermedio - Avanzado' },
+                  { name: 'REST APIs', level: 'Intermedio - Avanzado' }
                 ].map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between mb-2">
@@ -749,17 +747,15 @@ function App() {
                       }`}>
                         {skill.name}
                       </span>
-                      <span className={`text-sm ${
-                        darkMode ? 'text-gray-400' : 'text-gray-500'
+                      <span className={`text-sm px-2 py-1 rounded-full ${
+                        skill.level === 'Intermedio - Avanzado' 
+                          ? 'bg-green-100 text-green-800' 
+                          : skill.level === 'Intermedio'
+                          ? 'bg-yellow-100 text-yellow-800'
+                          : 'bg-gray-100 text-gray-800'
                       }`}>
-                        {skill.level}%
+                        {skill.level}
                       </span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div 
-                        className="bg-green-600 h-2 rounded-full transition-all duration-300"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
                     </div>
                   </div>
                 ))}
@@ -777,12 +773,12 @@ function App() {
               </h3>
               <div className="space-y-4">
                 {[
-                  { name: 'Sistemas Embebidos', level: 85 },
-                  { name: 'IoT & Drones', level: 90 },
-                  { name: 'Arduino', level: 85 },
-                  { name: 'WebRTC', level: 80 },
-                  { name: 'Machine Learning', level: 75 },
-                  { name: 'DevOps', level: 80 }
+                  { name: 'Sistemas Embebidos', level: 'Intermedio' },
+                  { name: 'IoT & Drones', level: 'Intermedio - Avanzado' },
+                  { name: 'Arduino', level: 'Intermedio' },
+                  { name: 'WebRTC', level: 'Intermedio' },
+                  { name: 'Machine Learning', level: 'Intermedio - Avanzado' },
+                  { name: 'DevOps', level: 'Intermedio - Avanzado' }
                 ].map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between mb-2">
@@ -791,17 +787,15 @@ function App() {
                       }`}>
                         {skill.name}
                       </span>
-                      <span className={`text-sm ${
-                        darkMode ? 'text-gray-400' : 'text-gray-500'
+                      <span className={`text-sm px-2 py-1 rounded-full ${
+                        skill.level === 'Intermedio - Avanzado' 
+                          ? 'bg-purple-100 text-purple-800' 
+                          : skill.level === 'Intermedio'
+                          ? 'bg-yellow-100 text-yellow-800'
+                          : 'bg-gray-100 text-gray-800'
                       }`}>
-                        {skill.level}%
+                        {skill.level}
                       </span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div 
-                        className="bg-purple-600 h-2 rounded-full transition-all duration-300"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
                     </div>
                   </div>
                 ))}
