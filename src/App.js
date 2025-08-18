@@ -1161,6 +1161,41 @@ function App() {
                     </div>
                   </div>
                 </div>
+
+                {/* CV */}
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center mr-4">
+                    <span className="text-white">📄</span>
+                  </div>
+                  <div>
+                    <p className={`font-semibold mb-2 ${
+                      darkMode ? 'text-white' : 'text-gray-900'
+                    }`}>
+                      Currículum Vitae
+                    </p>
+                    <div className="flex space-x-4">
+                      <a 
+                        href="/CV_Matias_Gracia.pdf" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className={`hover:text-green-600 transition-colors duration-200 ${
+                          darkMode ? 'text-gray-300' : 'text-gray-600'
+                        }`}
+                      >
+                        Ver CV
+                      </a>
+                      <a 
+                        href="/CV_Matias_Gracia.pdf" 
+                        download
+                        className={`hover:text-green-600 transition-colors duration-200 ${
+                          darkMode ? 'text-gray-300' : 'text-gray-600'
+                        }`}
+                      >
+                        Descargar CV
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             
