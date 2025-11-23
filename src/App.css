@@ -236,6 +236,208 @@ footer::before {
   }
 }
 
+/* Mejoras de responsividad para imágenes */
+.drone-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.drone-image:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 640px) {
+  .drone-image {
+    max-height: 200px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .drone-image {
+    max-height: 250px;
+  }
+}
+
+/* Responsive para el modal de imágenes */
+.image-modal {
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling en iOS */
+  overscroll-behavior: contain; /* Prevenir scroll del body */
+}
+
+/* Modal móvil - Layout vertical */
+@media (max-width: 767px) {
+  .image-modal {
+    padding: 0;
+  }
+  
+  .image-modal img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+  
+  .close-button {
+    position: fixed !important;
+    top: 1rem !important;
+    right: 1rem !important;
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+    font-size: 1.5rem !important;
+    z-index: 9999 !important;
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.8), 0 0 0 3px rgba(255, 255, 255, 0.3) !important;
+    pointer-events: auto !important;
+    touch-action: manipulation;
+  }
+  
+  /* Ocultar botones de navegación en móvil */
+  .modal-nav-button {
+    display: none;
+  }
+  
+  /* Hacer los indicadores más visibles en móvil si se muestran */
+  .modal-indicator {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
+
+/* Modal desktop/tablet */
+@media (min-width: 768px) {
+  .image-modal {
+    padding: 1rem;
+  }
+  
+  .image-modal img {
+    max-height: 85vh;
+    max-width: 90vw;
+  }
+  
+  .modal-nav-button {
+    padding: 1rem;
+    font-size: 2rem;
+    min-width: 3.5rem;
+    min-height: 3.5rem;
+  }
+  
+  .close-button {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .image-modal img {
+    max-height: 90vh;
+  }
+  
+  .modal-nav-button {
+    font-size: 2.5rem;
+    min-width: 4rem;
+    min-height: 4rem;
+  }
+}
+
+/* Responsive para las grillas de proyectos */
+@media (max-width: 640px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive para la línea de tiempo */
+@media (max-width: 640px) {
+  .timeline-line {
+    left: 1rem;
+  }
+  
+  .timeline-dot {
+    left: 0.5rem;
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+  
+  .timeline-content {
+    margin-left: 2rem;
+  }
+}
+
+/* Estilos para fechas dinámicas en la línea de tiempo */
+.timeline-item {
+  position: relative;
+}
+
+.timeline-date {
+  opacity: 0;
+  transform: translateX(30px) scale(0.7);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+  z-index: 10;
+  top: 0;
+  margin-right: 0.5rem;
+}
+
+.timeline-date-visible {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* Ajustes responsive para fechas */
+@media (max-width: 640px) {
+  .timeline-date {
+    font-size: 0.625rem;
+  }
+  
+  .timeline-date > div > div {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.625rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .timeline-date > div > div {
+    padding: 0.375rem 0.625rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .timeline-date > div > div {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Responsive para textos */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mejoras para tablets */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Estilos para el modo oscuro */
 .dark .drone-image:hover {
   box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
@@ -268,6 +470,16 @@ footer::before {
 /* Estilos para el modal de imágenes */
 .image-modal {
   animation: fadeIn 0.3s ease-out;
+  /* Prevenir scroll del body cuando el modal está abierto */
+  position: fixed;
+  overflow: hidden;
+}
+
+/* Prevenir scroll del body cuando el modal está abierto */
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 
 .image-modal img {
@@ -275,6 +487,86 @@ footer::before {
   /* Permitir que las imágenes mantengan su resolución original */
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
+  display: block;
+}
+
+/* Smooth scroll para móviles */
+@media (max-width: 767px) {
+  .image-modal {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+  }
+  
+  .image-modal > div {
+    min-height: 100%;
+  }
+  
+  /* Mejorar el espaciado entre imágenes en móvil */
+  .image-modal .space-y-8 > * + * {
+    margin-top: 2rem;
+  }
+  
+  /* Asegurar que las imágenes estén centradas */
+  .image-modal img {
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Permitir zoom táctil en imágenes móviles */
+  .image-zoom-container {
+    touch-action: pan-x pan-y pinch-zoom !important;
+    -webkit-overflow-scrolling: touch;
+    overflow: visible;
+  }
+  
+  .zoomable-image {
+    touch-action: pan-x pan-y pinch-zoom !important;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: default;
+    /* Permitir zoom nativo del navegador */
+    max-width: 100%;
+    width: auto;
+    height: auto;
+  }
+  
+  /* Asegurar que el contenedor del modal permita zoom */
+  .image-modal {
+    touch-action: pan-y pinch-zoom;
+  }
+  
+  /* Mensaje para indicar que se puede hacer zoom */
+  .zoom-hint {
+    position: fixed;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    pointer-events: none;
+    z-index: 9998;
+    animation: fadeInOut 3s ease-in-out;
+    opacity: 0.9;
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+    }
+    10%, 90% {
+      opacity: 0.9;
+    }
+  }
+  
+  /* Asegurar que el scroll no interfiera con el zoom */
+  .image-modal > div[class*="overflow-y-auto"] {
+    touch-action: pan-y pinch-zoom;
+  }
 }
 
 /* Botones de navegación del modal */
@@ -292,19 +584,36 @@ footer::before {
 
 /* Botón de cerrar específico */
 .close-button {
-  animation: pulse 1s infinite;
-  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.8);
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.8) !important;
   background: linear-gradient(45deg, #dc2626, #ef4444) !important;
   font-weight: 900 !important;
-  font-size: 20px !important;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer !important;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  position: fixed !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+  touch-action: manipulation;
 }
 
-.close-button:hover {
+.close-button:hover,
+.close-button:active {
   animation: none;
   transform: scale(1.1);
-  box-shadow: 0 12px 35px rgba(220, 38, 38, 1);
+  box-shadow: 0 12px 35px rgba(220, 38, 38, 1) !important;
   background: linear-gradient(45deg, #b91c1c, #dc2626) !important;
+}
+
+.close-button:active {
+  transform: scale(0.95);
+}
+
+/* Asegurar que el botón esté siempre visible */
+.close-button {
+  pointer-events: auto !important;
+  touch-action: manipulation;
 }
 
 @keyframes pulse {
@@ -352,6 +661,17 @@ footer::before {
   object-fit: contain;
   max-width: 100%;
   max-height: 100%;
+}
+
+/* Estilos para la imagen de perfil con zoom en la cara */
+.profile-image {
+  object-position: center 20% !important;
+  overflow: hidden;
+}
+
+.profile-image-container {
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 /* Estilos para el botón de enlace externo */
